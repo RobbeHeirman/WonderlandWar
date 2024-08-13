@@ -1,10 +1,6 @@
 import './App.css'
-import {useState} from "react";
+import React, {useState} from "react";
 import {JoinLobbyMessage} from "./proto/user_actions.ts";
-
-
-// const socket = new WebSocket("ws://localhost:8080");
-
 
 function App() {
     // socket.addEventListener("open", () => socket.send("Hello from client!")

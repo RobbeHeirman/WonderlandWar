@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package wonderlandwar;
 
-option go_package = "main";
+option go_package = "/proto_messages";
 
 
 message JoinLobbyMessage {

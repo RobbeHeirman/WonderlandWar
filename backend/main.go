@@ -1,8 +1,10 @@
 package main
 
 import (
+	"WonderlandWar/proto_messages"
 	"fmt"
 	"github.com/gorilla/websocket"
+	"google.golang.org/protobuf/proto"
 	"net/http"
 )
 
@@ -26,6 +28,11 @@ func RunSocket(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	t := &proto_messages.JoinLobbyMessage{
+		Name: "Test",
+	}
+	out, _ := proto.Marshal(t)
+	fmt.Println(out)
 	http.HandleFunc("/", RunSocket)
 	http.ListenAndServe(":8080", nil)
 }

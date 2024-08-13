@@ -48,3 +48,9 @@ export default tseslint.config({
   },
 })
 ```
+## Protobuff
+Generating protobuff
+```console 
+protoc --plugin=protoc-gen-ts=.\node_modules\.bin\protoc-gen-ts.cmd --ts_opt=esModuleInterop=true  --ts_out=".\src\protobuff" -I ../protobuff user_actions.proto
+
+```

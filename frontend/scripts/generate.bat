@@ -1,3 +1,5 @@
+@echo off
+
 set TARGET_DIR=.\src\proto
 mkdir "%TARGET_DIR%"
 if not exist "%TARGET_DIR%" (

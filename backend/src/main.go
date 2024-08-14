@@ -15,15 +15,6 @@ var upgrader = websocket.Upgrader{
 }
 
 func RunSocket(w http.ResponseWriter, r *http.Request) {
-	connection, _ := upgrader.Upgrade(w, r, nil)
-	for {
-		msgtype, message, err := connection.ReadMessage()
-		if err != nil || msgtype == websocket.CloseMessage {
-			fmt.Println("Connection closed")
-			break
-		}
-		fmt.Printf("Received message: %s\n", string(message))
-	}
 
 }
 
@@ -32,6 +23,7 @@ func main() {
 		Name: "Test",
 	}
 	out, _ := proto.Marshal(t)
+
 	fmt.Println(out)
 	http.HandleFunc("/", RunSocket)
 	http.ListenAndServe(":8080", nil)

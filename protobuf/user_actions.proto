@@ -2,7 +2,13 @@ syntax = "proto3";
 
 package proto_messages;
 
+import "google/protobuf/any.proto";
+
 option go_package = "/proto_messages";
+
+message Envelope {
+  google.protobuf.Any data = 1;
+}
 
 
 message JoinLobbyMessage {

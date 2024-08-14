@@ -1,4 +1,4 @@
-module WonderlandWar
+module github.com/robbeheirman/wonderland-war
 
 go 1.22
 

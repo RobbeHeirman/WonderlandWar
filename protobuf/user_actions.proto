@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wonderlandwar;
+package proto_messages;
 
 option go_package = "/proto_messages";
 

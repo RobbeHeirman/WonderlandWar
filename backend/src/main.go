@@ -1,9 +1,9 @@
 package main
 
 import (
-	"WonderlandWar/proto_messages"
 	"fmt"
 	"github.com/gorilla/websocket"
+	"github.com/robbeheirman/wonderland-war/proto_messages"
 	"google.golang.org/protobuf/proto"
 	"net/http"
 )

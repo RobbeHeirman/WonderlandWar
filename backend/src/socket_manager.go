@@ -38,14 +38,16 @@ func (manager *SocketManager) NewConnection(w http.ResponseWriter, r *http.Reque
 		}
 
 		m, err := envelope.Data.UnmarshalNew()
-		switch _ := m.(type) {
+		switch m := m.(type) {
 		case *proto_messages.JoinLobbyMessage:
+			manager.joinLobby(m, connection)
 		}
 	}
 }
 
 func (manager *SocketManager) joinLobby(msg *proto_messages.JoinLobbyMessage, conn *websocket.Conn) {
 	anyMsg, err := anypb.New(msg)
+	fmt.Println(msg.Name)
 	if err != nil {
 		log.Fatalln("Could not marshal anypb", err)
 	}
